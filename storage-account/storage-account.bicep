@@ -1,7 +1,7 @@
 param storageAccountName string
 param location string = resourceGroup().location
 param skuName string = 'Standard_LRS'
-// param accessTier string = 'Hot'
+// hello param accessTier string = 'Hot'
 param kind string = 'StorageV2'
 // param keySource string = 'Microsoft.Storage'
 // param blob_enabled bool = false
