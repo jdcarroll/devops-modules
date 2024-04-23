@@ -16,6 +16,14 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2020-12-01' = {
   }
 }
 
+module storageModule './modules/storage-account/storage-account.bicep' = {
+  name: deploymentName
+  params: {
+    storageAccountName: 'myUniqueStorageAccountName'
+    location: location
+  }
+}
+
 resource functionApp 'Microsoft.Web/sites@2020-12-01' = {
   name: appName
   location: location
@@ -47,6 +55,8 @@ resource functionApp 'Microsoft.Web/sites@2020-12-01' = {
     type: 'SystemAssigned'
   }
 }
+
+
 
 resource functionAppVnetIntegration 'Microsoft.Web/sites/virtualNetworkConnections@2020-06-01' = {
   parent: functionApp
