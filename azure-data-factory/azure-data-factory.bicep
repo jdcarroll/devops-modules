@@ -36,4 +36,4 @@ resource virtualNetwork 'Microsoft.DataFactory/factories/managedVirtualNetworks@
 
 output dataFactoryName string = dataFactory.name
 output managedVnetName string = virtualNetwork.name
-output privateEndpointName string = privateEndpoint.name
+// output privateEndpointName string = privateEndpoint.name
